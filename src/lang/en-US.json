@@ -1,0 +1,23 @@
+{
+  "pages": {
+    "index": {
+      "description": "Rousing Software Engineer focused on web technologies. I help companies deliver software from ideation to production. I share my knowledge with my peers to help them succeed in their role while maintaining alignment with the company goals."
+    }
+  },
+  "home": {
+    "about": {
+      "heading": "👋🏼 Hi! I'm Mario",
+      "p1": "Rousing Software Engineer focused on web technologies.",
+      "p2": "I help companies deliver software from ideation to production. I share my knowledge with my peers to help them succeed in their role while maintaining alignment with the company goals.",
+      "p3": "Centered on potential gains for the company, I'm responsible for 95% reduction in the infrastructure cost last year.",
+      "p4": "In love with cutting-edge technologies, I am mastering {nuxt} and {deno}.",
+      "p5": "I've recently been playing extensively with {websockets} and {webrtc}."
+    }
+  },
+  "brands": {
+    "nuxt": "Nuxt",
+    "deno": "Deno",
+    "websockets": "WebSockets",
+    "webrtc": "WebRTC"
+  }
+}

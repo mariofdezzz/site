@@ -1,0 +1,23 @@
+{
+  "pages": {
+    "index": {
+      "description": "Ingeniero de Software entusiasta enfocado en tecnologías web. Ayudo a las empresas a entregar software desde la ideación hasta la producción. Comparto mi conocimiento con mis compañeros para ayudarlos a tener éxito en su posición manteniéndolo alineado con los objetivos de la empresa."
+    }
+  },
+  "home": {
+    "about": {
+      "heading": "👋🏼 Hola! Soy Mario",
+      "p1": "Ingeniero de Software entusiasta enfocado en tecnologías web.",
+      "p2": "Ayudo a las empresas a entregar software desde la ideación hasta la producción. Comparto mi conocimiento con mis compañeros para ayudarlos a tener éxito en su posición manteniéndolo alineado con los objetivos de la empresa.",
+      "p3": "Centrado en las ganancias potenciales para la empresa, soy responsable de la reducción del 95% en el costo de la infraestructura en el último año.",
+      "p4": "Enamorado de las tecnologías más innovadoras, estoy dominando {nuxt} y {deno}.",
+      "p5": "Recientemente he estado jugando mucho con {websockets} y {webrtc}."
+    }
+  },
+  "brands": {
+    "nuxt": "Nuxt",
+    "deno": "Deno",
+    "websockets": "WebSockets",
+    "webrtc": "WebRTC"
+  }
+}
