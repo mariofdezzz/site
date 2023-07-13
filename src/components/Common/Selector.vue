@@ -106,8 +106,8 @@ $select-padding: 0.5rem;
     &.short {
       padding: 0.1rem calc($icon-width + $select-padding );
       width: 0;
+      max-width: 0;
     }
   }
 }
-
 </style>
