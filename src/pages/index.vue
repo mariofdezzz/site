@@ -1,7 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   description: 'pages.index.description',
-  image: '/images/profile/01.jpg'
+  image: '/images/profile/og-image.jpg'
 })
 </script>
 

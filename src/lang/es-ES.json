@@ -6,6 +6,10 @@
   },
   "home": {
     "about": {
+      "portrait": {
+        "alt": "Imagen de perfil",
+        "caption": "22 Ago, 2022"
+      },
       "heading": "👋🏼 Hola! Soy Mario",
       "p1": "Ingeniero de Software entusiasta enfocado en tecnologías web.",
       "p2": "Ayudo a las empresas a entregar software desde la ideación hasta la producción. Comparto mi conocimiento con mis compañeros para ayudarlos a tener éxito en su posición manteniéndolo alineado con los objetivos de la empresa.",

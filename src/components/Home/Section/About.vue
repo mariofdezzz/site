@@ -1,8 +1,10 @@
 <script setup lang="ts">
+const { t } = useI18n()
+
 const portrait = {
   src: '/images/profile/01.jpg',
-  alt: 'Profile picture',
-  caption: 'Aug 22, 2022'
+  alt: t('home.about.portrait.alt'),
+  caption: t('home.about.portrait.caption')
 }
 </script>
 

@@ -24,7 +24,8 @@ useSeoMeta({
   ogImage: image,
   twitterCard: 'summary_large_image',
   twitterTitle: title,
-  twitterDescription: description
+  twitterDescription: description,
+  twitterImage: image
 })
 useServerHead({
   htmlAttrs: {

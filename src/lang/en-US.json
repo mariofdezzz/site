@@ -6,6 +6,10 @@
   },
   "home": {
     "about": {
+      "portrait": {
+        "alt": "Profile picture",
+        "caption": "Aug 22, 2022"
+      },
       "heading": "👋🏼 Hi! I'm Mario",
       "p1": "Rousing Software Engineer focused on web technologies.",
       "p2": "I help companies deliver software from ideation to production. I share my knowledge with my peers to help them succeed in their role while maintaining alignment with the company goals.",
