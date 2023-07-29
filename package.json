@@ -6,7 +6,7 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "clean": "rm -rf .output"
+    "clean": "rm -rf .output && rm dist"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
