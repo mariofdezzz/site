@@ -38,14 +38,14 @@ const portrait = {
         scope="global"
       >
         <template #nuxt>
-          <a href="https://nuxt.com">
+          <CommonLink href="https://nuxt.com">
             {{ $t('brands.nuxt') }}
-          </a>
+          </CommonLink>
         </template>
         <template #deno>
-          <a href="https://deno.com">
+          <CommonLink href="https://deno.com">
             {{ $t('brands.deno') }}
-          </a>
+          </CommonLink>
         </template>
       </i18n-t>
     </p>
@@ -56,14 +56,14 @@ const portrait = {
         scope="global"
       >
         <template #websockets>
-          <a href="https://developer.mozilla.org/docs/Web/API/WebSockets_API">
+          <CommonLink href="https://developer.mozilla.org/docs/Web/API/WebSockets_API">
             {{ $t('brands.websockets') }}
-          </a>
+          </CommonLink>
         </template>
         <template #webrtc>
-          <a href="https://webrtc.org">
+          <CommonLink href="https://webrtc.org">
             {{ $t('brands.webrtc') }}
-          </a>
+          </CommonLink>
         </template>
       </i18n-t>
     </p>
