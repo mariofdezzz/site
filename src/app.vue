@@ -32,7 +32,11 @@ useServerHead({
     lang: head.value.htmlAttrs!.lang,
     dir: head.value.htmlAttrs!.dir
   },
-  link: [...(head.value.link || [])],
+  link: [
+    ...(head.value.link || []),
+    { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+    { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }
+  ],
   meta: [...(head.value.meta || [])]
 })
 </script>
