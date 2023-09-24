@@ -4,7 +4,8 @@ const { t } = useI18n()
 const portrait = {
   src: '/images/profile/01.jpg',
   alt: t('home.about.portrait.alt'),
-  caption: t('home.about.portrait.caption')
+  caption: t('home.about.portrait.caption'),
+  sizes: '250px'
 }
 </script>
 
@@ -14,6 +15,7 @@ const portrait = {
       :src="portrait.src"
       :alt="portrait.alt"
       :caption="portrait.caption"
+      :sizes="portrait.sizes"
     />
 
     <h1>

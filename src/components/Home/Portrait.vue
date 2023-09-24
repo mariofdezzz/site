@@ -2,16 +2,19 @@
 defineProps<{
   src: string,
   alt: string,
-  caption: string
+  caption: string,
+  sizes?: string,
 }>()
 </script>
 
 <template>
   <figure>
-    <img
+    <NuxtImg
       :src="src"
       :alt="alt"
-    >
+      :sizes="sizes"
+      format="webp"
+    />
     <figcaption>{{ caption }}</figcaption>
   </figure>
 </template>
