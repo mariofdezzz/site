@@ -23,5 +23,19 @@
     "deno": "Deno",
     "websockets": "WebSockets",
     "webrtc": "WebRTC"
+  },
+  "footer": {
+    "select": {
+      "ariaLabel": {
+        "lang": "Idioma",
+        "colorMode": "Aspecto"
+      }
+    },
+    "links": {
+      "ariaLabel": {
+        "github": "Ver mi perfil de Github",
+        "linkedin": "Ver mi perfil de Linkedin"
+      }
+    }
   }
 }

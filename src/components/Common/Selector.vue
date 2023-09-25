@@ -7,7 +7,7 @@ const props = defineProps<{
   options: Option<K>[]
   modelValue: K
   iconName: string
-  name?: string
+  ariaLabel?: string
   short?: boolean
 }>()
 const emit = defineEmits(['update:modelValue'])
@@ -36,7 +36,7 @@ const select = ref<HTMLSelectElement|null>(null)
     <select
       ref="select"
       v-model="value"
-      :name="name"
+      :aria-label="ariaLabel"
       :class="{ short }"
     >
       <option

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { LocaleObject } from '@nuxtjs/i18n/dist/runtime/composables'
-import { Option } from 'components/Common/Selector.vue'
+import { Option } from '~/components/Common/Selector.vue'
 
 const { locale, locales, setLocale } = useI18n()
 
@@ -26,6 +26,7 @@ const options = computed<Option<string>[]>(() =>
     v-model="value"
     :options="options"
     icon-name="material-symbols:translate-rounded"
+    :aria-label="$t('footer.select.ariaLabel.lang')"
     short
   />
 </template>

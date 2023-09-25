@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Option } from 'components/Common/Selector.vue'
+import { Option } from '~/components/Common/Selector.vue'
 
 const colorMode = useColorMode()
 
@@ -34,5 +34,6 @@ const icon = computed(() => {
     v-model="colorMode.preference"
     :options="options"
     :icon-name="icon"
+    :aria-label="$t('footer.select.ariaLabel.colorMode')"
   />
 </template>

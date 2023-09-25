@@ -3,7 +3,6 @@ defineProps<{
   src: string,
   alt: string,
   caption: string,
-  sizes?: string,
 }>()
 </script>
 
@@ -12,8 +11,10 @@ defineProps<{
     <NuxtImg
       :src="src"
       :alt="alt"
-      :sizes="sizes"
+      sizes="240px"
       format="webp"
+      width="240"
+      height="320"
     />
     <figcaption>{{ caption }}</figcaption>
   </figure>
