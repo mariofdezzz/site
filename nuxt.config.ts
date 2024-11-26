@@ -1,16 +1,21 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   typescript: {
     shim: false
   },
+
   srcDir: 'src/',
+
   modules: [
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
     'nuxt-icon',
     '@nuxt/image'
   ],
+
   css: ['@/assets/styles/index.scss'],
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -22,19 +27,20 @@ export default defineNuxtConfig({
       }
     }
   },
+
   i18n: {
     vueI18n: './src/i18n.config.ts',
     baseUrl: 'https://mariofdezzz.dev',
     locales: [
       {
         code: 'en',
-        iso: 'en-US',
+        language: 'en-US',
         file: 'en-US.json',
         name: 'English',
         isCatchallLocale: true
       }, {
         code: 'es',
-        iso: 'es-ES',
+        language: 'es-ES',
         file: 'es-ES.json',
         name: 'Español',
         isCatchallLocale: true
@@ -50,5 +56,7 @@ export default defineNuxtConfig({
     langDir: 'lang',
     strategy: 'prefix_except_default',
     defaultLocale: 'en'
-  }
+  },
+
+  compatibilityDate: '2024-11-26'
 })
