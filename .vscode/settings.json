@@ -2,6 +2,7 @@
   "files.exclude": {
     "node_modules": true,
     ".nuxt": true,
+    ".output": true,
     "package-lock.json": true,
     ".git*": true,
     ".npm*": true
