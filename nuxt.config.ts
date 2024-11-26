@@ -8,7 +8,9 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
     'nuxt-icon',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@pinia/nuxt',
+    '@nuxt/content'
   ],
   css: ['@/assets/styles/index.scss'],
   vite: {
