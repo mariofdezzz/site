@@ -4,7 +4,16 @@
       href="https://github.com/mariofdezzz"
       :aria-label="$t('footer.links.ariaLabel.github')"
     >
-      <Icon name="grommet-icons:github" />
+      <Icon name="simple-icons:github" />
+    </a>
+
+    <span>|</span>
+
+    <a
+      href="https://substack.com/@mariofdezzz"
+      :aria-label="$t('footer.links.ariaLabel.substack')"
+    >
+      <Icon name="simple-icons:substack" size="1.1rem" />
     </a>
 
     <span>|</span>
@@ -13,7 +22,7 @@
       href="https://www.linkedin.com/in/mario-ferrero"
       :aria-label="$t('footer.links.ariaLabel.linkedin')"
     >
-      <Icon name="grommet-icons:linkedin" />
+      <Icon name="simple-icons:linkedin" />
     </a>
   </div>
 </template>

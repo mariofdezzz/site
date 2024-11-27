@@ -34,7 +34,8 @@
     "links": {
       "ariaLabel": {
         "github": "Ver mi perfil de Github",
-        "linkedin": "Ver mi perfil de Linkedin"
+        "linkedin": "Ver mi perfil de Linkedin",
+        "substack": "Ver mi perfil de Substack"
       }
     }
   }
