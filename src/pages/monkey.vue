@@ -1,0 +1,14 @@
+<template>
+  <div id="playground">
+    <MonkeyType />
+  </div>
+</template>
+
+<style scoped lang="scss">
+#playground {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+}
+</style>
