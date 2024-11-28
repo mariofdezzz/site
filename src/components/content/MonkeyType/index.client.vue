@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import english1k from './dictionaries/english_1k.json'
 import { generateText } from './dictionaries/generate-text'
+import Input from './Input.vue'
+import Timer from './Timer.vue'
 import type { GameStatus } from './types'
 
 const text = generateText(english1k.words)
@@ -16,13 +18,13 @@ function startGame () {
 
 <template>
   <div id="monkey-type">
-    <MonkeyTypeTimer
+    <Timer
       :style="{ visibility: gameStatus === 'playing' ? 'visible' : 'hidden' }"
       :game-status
       @timeout="gameStatus = 'finished'"
     />
 
-    <MonkeyTypeInput
+    <Input
       v-if="gameStatus !== 'finished'"
       :text
       @start-typing="startGame()"

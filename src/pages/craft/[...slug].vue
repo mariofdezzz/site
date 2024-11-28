@@ -1,6 +1,6 @@
 <template>
   <div id="playground">
-    <MonkeyType />
+    <ContentDoc />
   </div>
 </template>
 

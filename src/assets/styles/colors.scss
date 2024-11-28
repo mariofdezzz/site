@@ -5,6 +5,7 @@ html.light-mode {
   --disabled: hwb(231 35% 52% / 0.6);
   --link: hwb(235 29% 11%);
   --link-hover: linear-gradient(45deg, hwb(333 16% 14%) 0%, hwb(38 4% 4%) 100%);
+  --border: hwb(0 95% 5%);
 }
 
 html.dark-mode {
@@ -13,4 +14,5 @@ html.dark-mode {
   --disabled: hwb(231 36% 52%);
   --link: hwb(43 15% 1%);
   --link-hover: linear-gradient(45deg, hwb(333 16% 14%) 0%, hwb(38 4% 4%) 100%);
+  --border: hwb(0 95% 5%);
 }

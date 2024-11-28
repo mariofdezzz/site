@@ -7,4 +7,6 @@ definePageMeta({
 
 <template>
   <HomeSectionAbout />
+
+  <HomeSectionCraft />
 </template>

@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
-
+  ssr: true,
   typescript: {
     shim: false
   },
@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/color-mode',
     'nuxt-icon',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxt/content'
   ],
 
   css: ['@/assets/styles/index.scss'],
