@@ -1,62 +1,25 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
+	compatibilityDate: '2025-07-15',
+	devtools: { enabled: true },
 
-  typescript: {
-    shim: false
-  },
+	modules: [
+		'@nuxt/eslint',
+		'@nuxtjs/tailwindcss',
+		'@nuxt/icon',
+		'@nuxtjs/i18n',
+		'@nuxtjs/color-mode',
+		'@nuxt/image',
+	],
 
-  srcDir: 'src/',
+	css: ['~/assets/index.css'],
 
-  modules: [
-    '@nuxtjs/i18n',
-    '@nuxtjs/color-mode',
-    'nuxt-icon',
-    '@nuxt/image'
-  ],
-
-  css: ['@/assets/styles/index.scss'],
-
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: `
-            @import "@/assets/styles/variables/index.scss";
-          `
-        }
-      }
-    }
-  },
-
-  i18n: {
-    vueI18n: './src/i18n.config.ts',
-    baseUrl: 'https://mariofdezzz.dev',
-    locales: [
-      {
-        code: 'en',
-        language: 'en-US',
-        file: 'en-US.json',
-        name: 'English',
-        isCatchallLocale: true
-      }, {
-        code: 'es',
-        language: 'es-ES',
-        file: 'es-ES.json',
-        name: 'Español',
-        isCatchallLocale: true
-      }
-    ],
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      alwaysRedirect: true,
-      redirectOn: 'root'
-    },
-    lazy: true,
-    langDir: 'lang',
-    strategy: 'prefix_except_default',
-    defaultLocale: 'en'
-  },
-
-  compatibilityDate: '2024-11-26'
+	i18n: {
+		baseUrl: 'https://mariofdezzz.dev',
+		defaultLocale: 'en',
+		locales: [
+			{ code: 'en-US', language: 'en-US', name: 'English', file: 'en-US.json' },
+			{ code: 'es-ES', language: 'es-ES', name: 'Español', file: 'es-ES.json' },
+		],
+	},
 })
