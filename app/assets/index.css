@@ -1,39 +1,45 @@
-
 html,
 body,
 #__nuxt,
 #layout {
-  height: 100%;
+	height: 100%;
 }
 
 a:not(:has(svg)) {
-   text-decoration: none;
-  font-weight: 600;
-  color: var(--link);
+	text-decoration: none;
+	font-weight: 600;
+	color: var(--link);
 }
 
 a:not(:has(svg)):hover {
-  background: var(--link-hover);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+	background: var(--link-hover);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 /* === Color Theme === */
-:root, :root.light-mode {
-  --max-text-width: 80ch;
-  --base: hwb(0 100% 0%);
-  --on-base: hwb(231 35% 52%);
-  --disabled: hwb(231 35% 52% / 0.6);
-  --link: hwb(235 29% 11%);
-  --link-hover: linear-gradient(45deg, hwb(333 16% 14%) 0%, hwb(38 4% 4%) 100%);
+:root,
+:root.light-mode {
+	--max-text-width: 80ch;
+	--base: hwb(0 100% 0%);
+	--on-base: hwb(231 35% 52%);
+	--disabled: hwb(231 35% 52% / 0.6);
+	--link: hwb(235 29% 11%);
+	--link-hover: linear-gradient(45deg, hwb(333 16% 14%) 0%, hwb(38 4% 4%) 100%);
+	/* Elevated/floating surfaces (light) */
+	--shadow-elevated: 0px 12.8px 28.8px rgba(0, 0, 0, 0.13),
+		0px 0px 9.2px rgba(0, 0, 0, 0.11);
 }
 
 :root.dark-mode {
-    --base: hwb(233 11% 82%);
-    --on-base: hwb(223 86% 8%);
-    --disabled: hwb(231 36% 52%);
-    --link: hwb(43 15% 1%);
-    --link-hover: linear-gradient(45deg, hwb(333 16% 14%) 0%, hwb(38 4% 4%) 100%);
+	--base: hwb(233 11% 82%);
+	--on-base: hwb(223 86% 8%);
+	--disabled: hwb(231 36% 52%);
+	--link: hwb(43 15% 1%);
+	--link-hover: linear-gradient(45deg, hwb(333 16% 14%) 0%, hwb(38 4% 4%) 100%);
+	/* Elevated/floating surfaces (dark) - fallback (no color-mix) */
+	--shadow-elevated: 0px 12.8px 28.8px rgba(150, 150, 150, 0.13),
+		0px 0px 9.2px rgba(150, 150, 150, 0.11);
 }
 
 /* @media (prefers-color-scheme: dark) {
