@@ -6,5 +6,11 @@ definePageMeta({
 </script>
 
 <template>
-	<HomeSectionAbout />
+	<div>
+		<HomeSectionAbout />
+
+		<br />
+
+		<HomeSectionProjects />
+	</div>
 </template>

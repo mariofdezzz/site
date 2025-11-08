@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div id="layout" class="grid gap-x-4 gap-y-8 bg-base text-on-base">
+	<div
+		id="layout"
+		class="grid gap-x-4 gap-y-8 bg-base text-on-base overflow-auto"
+	>
 		<LayoutHeader />
 
 		<main>
