@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 
 	i18n: {
 		baseUrl: 'https://mariofdezzz.dev',
-		defaultLocale: 'en',
+		defaultLocale: 'en-US',
 		locales: [
 			{ code: 'en-US', language: 'en-US', name: 'English', file: 'en-US.json' },
 			{ code: 'es-ES', language: 'es-ES', name: 'Español', file: 'es-ES.json' },
