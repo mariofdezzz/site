@@ -22,4 +22,13 @@ export default defineNuxtConfig({
 			{ code: 'es-ES', language: 'es-ES', name: 'Español', file: 'es-ES.json' },
 		],
 	},
+
+	routeRules: {
+		// ISR global: render on-demand y revalida cada 24h (86400 s)
+		'/': { isr: 86400 },
+		'/**': { isr: 86400 },
+
+		// ❗ Excepciones
+		'/api/**': { ssr: true },
+	},
 })
