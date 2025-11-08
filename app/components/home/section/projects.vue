@@ -29,6 +29,7 @@ const projects = [
 				:title
 				:description
 				:link
+				external
 			/>
 		</div>
 	</section>

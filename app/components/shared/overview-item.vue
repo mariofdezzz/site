@@ -2,8 +2,9 @@
 defineProps<{
 	src: string
 	title: string
-	description: string
+	description?: string
 	link: string
+	external?: boolean
 }>()
 </script>
 
@@ -17,9 +18,11 @@ defineProps<{
 		<article>
 			<div class="relative mb-2">
 				<Icon
+					v-if="external"
 					name="material-symbols:open-in-new-rounded"
 					class="absolute top-2 right-2 w-4 h-4 text-white opacity-75"
 				/>
+
 				<NuxtImg
 					:src="src"
 					:alt="title"
@@ -28,12 +31,14 @@ defineProps<{
 					class="object-cover aspect-video rounded-md"
 				/>
 
-				<h4 class="absolute bottom-1 left-2 text-xs font-bold text-white">
+				<h4
+					class="absolute bottom-1 left-2 text-xs font-bold text-white mix-blend-difference"
+				>
 					{{ title }}
 				</h4>
 			</div>
 
-			<p class="line-clamp-1 text-sm">
+			<p v-if="description" class="line-clamp-1 text-sm">
 				{{ description }}
 			</p>
 		</article>

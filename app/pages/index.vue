@@ -11,6 +11,8 @@ definePageMeta({
 
 		<br />
 
-		<HomeSectionProjects />
+		<HomeSectionProjects class="mb-10" />
+
+		<HomeSectionArticles />
 	</div>
 </template>
