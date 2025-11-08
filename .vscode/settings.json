@@ -3,9 +3,10 @@
     "node_modules": true,
     ".nuxt": true,
     ".output": true,
+    "dist": true,
     "package-lock.json": true,
     ".git*": true,
-    ".npm*": true
+    ".npm*": true,
   },
   "files.associations": {
     "*.css": "tailwindcss"
