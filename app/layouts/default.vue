@@ -4,10 +4,7 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 
 <template>
 	<div class="h-full">
-		<div
-			id="layout"
-			class="grid gap-x-4 gap-y-8 bg-base text-on-base overflow-auto"
-		>
+		<div id="layout" class="grid gap-x-4 gap-y-8 text-on-base">
 			<LayoutHeader />
 
 			<main>
