@@ -13,7 +13,7 @@ defineEmits<{
 <template>
 	<select
 		v-model="model"
-		class="border border-disabled rounded-[3px]"
+		class="border border-disabled rounded-[3px] bg-base"
 		@change="$emit('change', model)"
 	>
 		<button class="flex items-center gap-1">
