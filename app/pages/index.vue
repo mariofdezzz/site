@@ -9,9 +9,7 @@ definePageMeta({
 	<div>
 		<HomeSectionAbout />
 
-		<br />
-
-		<HomeSectionProjects class="mb-10" />
+		<HomeSectionProjects class="clear-both mb-10" />
 
 		<HomeSectionArticles />
 	</div>
