@@ -3,7 +3,7 @@ import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 </script>
 
 <template>
-	<div class="h-full">
+	<div class="h-full antialiased">
 		<div id="layout" class="grid gap-x-4 gap-y-8 text-on-base">
 			<LayoutHeader />
 
