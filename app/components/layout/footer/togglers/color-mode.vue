@@ -32,7 +32,7 @@ const icon = computed(() => {
 		:aria-label="$t('footer.select.aria-label.color-mode')"
 	>
 		<div class="flex gap-2 items-center">
-			<Icon id="custom-icon" :name="icon" width="16" />
+			<Icon :name="icon" width="16" />
 
 			<span>
 				{{ $t(`footer.select.color-modes.${colorMode.preference}`) }}

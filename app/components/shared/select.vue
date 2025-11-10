@@ -21,11 +21,7 @@ defineEmits<{
 				<slot />
 			</span>
 
-			<Icon
-				id="select-icon"
-				class="medium-icon"
-				name="heroicons:chevron-up-down"
-			/>
+			<Icon name="heroicons:chevron-up-down" />
 		</button>
 
 		<option v-for="option in options" :key="option.value" :value="option.value">

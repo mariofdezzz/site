@@ -22,10 +22,6 @@ function update(newLocale?: string) {
 		:aria-label="$t('footer.select.aria-label.lang')"
 		@change="update"
 	>
-		<Icon
-			id="custom-icon"
-			name="material-symbols:translate-rounded"
-			width="16"
-		/>
+		<Icon name="material-symbols:translate-rounded" width="16" />
 	</SharedSelect>
 </template>
