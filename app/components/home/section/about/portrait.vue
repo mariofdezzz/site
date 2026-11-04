@@ -1,52 +1,13 @@
-<script setup lang="ts">
-defineProps<{
-	src: string
-	alt: string
-	caption: string
-}>()
-</script>
-
 <template>
-	<figure>
+	<figure class="w-60 aspect-3/4 margin-auto sm:float-left sm:mr-12">
 		<NuxtImg
-			:src="src"
-			:alt="alt"
+			src="/images/profile.jpg"
+			:alt="$t('home.about.portrait.alt')"
 			sizes="240px"
 			format="webp"
 			width="240"
 			height="320"
+			class="w-full rounded-lg object-cover"
 		/>
-		<figcaption>{{ caption }}</figcaption>
 	</figure>
 </template>
-
-<style scoped lang="scss">
-$border-radius: 10px;
-
-figure {
-	width: 15rem;
-	aspect-ratio: 3/4;
-
-	// Mobile
-	margin: auto;
-
-	img {
-		width: 100%;
-		border-radius: $border-radius;
-		object-fit: cover;
-	}
-
-	figcaption {
-		text-align: end;
-		font-size: 0.7rem;
-		padding: 0.5rem $border-radius;
-	}
-}
-
-@media (min-width: 550px) {
-	figure {
-		float: left;
-		margin-right: 1.5rem;
-	}
-}
-</style>

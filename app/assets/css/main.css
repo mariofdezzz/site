@@ -1,0 +1,55 @@
+@import 'tailwindcss';
+
+@theme {
+	--font-sans:
+		'Geist Variable', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Helvetica Neue', 'Noto Sans', Arial, sans-serif, 'Apple Color Emoji',
+		'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	--font-mono:
+		'Geist Mono Variable', ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, 'Liberation Mono', 'Courier New', monospace;
+
+	--color-base: light-dark(#fdfdfc, #111);
+	--color-on-base: light-dark(#111, #fdfdfc);
+	--color-on-base-border: light-dark(#E3E4EA, #2d2d2d);
+	--background-image-link-hover: linear-gradient(
+		45deg,
+		hsl(203, 90%, 46%) 0%,
+		hsl(99, 82%, 45%) 100%
+	);
+}
+
+@layer base {
+	:root {
+		@apply scheme-light-dark;
+	}
+
+	html,
+	body,
+	#__nuxt {
+		@apply font-sans h-dvh bg-base text-on-base antialiased;
+	}
+
+	a:not(:has(svg, article), .button-link) {
+		@apply no-underline font-semibold ;
+	}
+
+	a:not(:has(svg, article), .button-link):hover {
+		@apply bg-link-hover bg-clip-text text-transparent;
+	}
+
+	a.button-link {
+		@apply no-underline px-4 py-2 bg-base text-on-base font-medium rounded-lg border border-transparent hover:border-on-base-border;
+	}
+
+	.index-dot-spacing {
+  height: 3px;
+		background-image: radial-gradient(
+    circle,
+    #d9dce8 1px,
+    transparent 1px
+  );
+  background-size: 5px 3px;
+  background-repeat: repeat-x;
+	}
+}

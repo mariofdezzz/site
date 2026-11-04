@@ -1,47 +1,30 @@
 {
-  "pages": {
-    "index": {
-      "description": "Rousing Software Engineer focused on web technologies. I help companies deliver software from ideation to production. I share my knowledge with my peers to help them succeed in their role while maintaining alignment with the company goals."
-    }
-  },
   "home": {
     "about": {
       "portrait": {
-        "alt": "Profile picture",
-        "caption": "Aug 22, 2022"
+        "alt": "Portrait of Mario"
       },
-      "heading": "👋🏼 Hi! I'm Mario",
-      "p1": "Rousing Software Engineer focused on web technologies.",
-      "p2": "I help companies deliver software from ideation to production. I share my knowledge with my peers to help them succeed in their role while maintaining alignment with the company goals.",
-      "p3": "Centered on potential gains for the company, I'm responsible for 95% reduction in the infrastructure cost last year.",
-      "p4": "In love with cutting-edge technologies, I am mastering {nuxt} and {deno}.",
-      "p5": "I've recently been playing extensively with {websockets} and {webrtc}."
-    }
-  },
-  "brands": {
-    "nuxt": "Nuxt",
-    "deno": "Deno",
-    "websockets": "WebSockets",
-    "webrtc": "WebRTC"
-  },
-  "footer": {
-    "select": {
-      "aria-label": {
-        "lang": "Change language",
-        "color-mode": "Change color mode"
-      },
-      "color-modes": {
-        "light": "Light",
-        "dark": "Dark",
-        "system": "System"
+      "links": {
+        "aria": {
+          "github": "GitHub Profile",
+          "instagram": "Instagram Profile",
+          "linkedin": "LinkedIn Profile"
+        }
       }
     },
-    "links": {
-      "aria-label": {
-        "github": "See my Github profile",
-        "linkedin": "See my Linkedin profile",
-        "substack": "See my Substack profile"
+    "projects": {
+      "gql-banner": {
+        "alt": "GraphQL Network Banner",
+        "title": "GraphQL Network",
+        "description": "A Chrome DevTools extension to inspect and debug GraphQL traffic, right where you already work",
+        "button": "Visit Site"
       }
+    },
+    "talks": {
+      "gql-reel-1": "GraphQL Network Reel 1",
+      "gql-video-cover": "GraphQL Network Video Cover",
+      "gql-reel-2": "GraphQL Network Reel 2",
+      "gql-slides-cover": "GraphQL Network Slides Cover"
     }
   }
 }

@@ -1,72 +1,46 @@
-<script setup lang="ts">
-const { t } = useI18n()
-
-const portrait = {
-	src: '/images/profile/01.jpg',
-	alt: t('home.about.portrait.alt'),
-	caption: t('home.about.portrait.caption'),
-}
-</script>
-
 <template>
-	<section>
-		<HomeSectionAboutPortrait
-			:src="portrait.src"
-			:alt="portrait.alt"
-			:caption="portrait.caption"
-		/>
+	<section class="[&_p]:pb-5 [&_p]:last:pb-0">
+		<HomeSectionAboutPortrait />
 
-		<h1>
-			{{ $t('home.about.heading') }}
-		</h1>
+		<h1 class="text-2xl font-bold pb-2">Mario Ferrero</h1>
+
+		<HomeSectionAboutLinks class="pb-6" />
 
 		<p>
-			{{ $t('home.about.p1') }}
+			I was raised in the
+			<a
+				href="https://en.wikipedia.org/wiki/Canary_Islands"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Canary Islands
+			</a>
+			and now work remotely worldwide.
 		</p>
 
 		<p>
-			{{ $t('home.about.p2') }}
+			I currently work with
+			<a
+				href="https://www.airbus.com"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Airbus
+			</a>
+			as a Technical Lead. I lead some teams while I ensure technical excellence
+			across the Spanish division (+50 engineers).
 		</p>
 
 		<p>
-			{{ $t('home.about.p3') }}
-		</p>
-
-		<p>
-			<i18n-t keypath="home.about.p4" scope="global">
-				<template #nuxt>
-					<a href="https://nuxt.com">
-						{{ $t('brands.nuxt') }}
-					</a>
-				</template>
-				<template #deno>
-					<a href="https://deno.com">
-						{{ $t('brands.deno') }}
-					</a>
-				</template>
-			</i18n-t>
-		</p>
-
-		<p>
-			<i18n-t keypath="home.about.p5" scope="global">
-				<template #websockets>
-					<a href="https://developer.mozilla.org/docs/Web/API/WebSockets_API">
-						{{ $t('brands.websockets') }}
-					</a>
-				</template>
-				<template #webrtc>
-					<a href="https://webrtc.org">
-						{{ $t('brands.webrtc') }}
-					</a>
-				</template>
-			</i18n-t>
+			I consider developer experience a crucial aspect of building successful
+			software. Pursuing excellence on this area has led me to create
+			<a
+				href="https://graphql-network.com"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				GraphQL Network.
+			</a>
 		</p>
 	</section>
 </template>
-
-<style scoped lang="scss">
-h1,
-p:not(:last-child) {
-	margin-bottom: 1rem;
-}
-</style>
