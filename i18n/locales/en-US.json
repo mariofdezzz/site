@@ -1,6 +1,9 @@
 {
   "home": {
     "about": {
+      "p1": "I'm a software engineer raised in Gran Canaria, Spain. I've focused my career on web technologies and desktop/mobile applications.",
+      "p2": "I currently work with {airbus} as a Technical Lead. I lead teams while I ensure technical excellence across the Spanish division (+50 engineers).",
+      "p3": "I consider developer experience a crucial aspect of building successful software. Pursuing excellence in this area has led me to create {graphql}.",
       "portrait": {
         "alt": "Portrait of Mario"
       },

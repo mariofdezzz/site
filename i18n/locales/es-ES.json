@@ -1,1 +1,33 @@
-{}
+{
+  "home": {
+    "about": {
+      "p1": "Soy un ingeniero de software nacido en Gran Canaria, España. He centrado mi carrera en tecnologías web y aplicaciones de escritorio/móvil.",
+      "p2": "Actualmente trabajo con {airbus} como Technical Lead. Dirijo equipos mientras aseguro la excelencia técnica en toda la división española (+50 ingenieros).",
+      "p3": "Considero que la experiencia del desarrollador es un aspecto crucial para construir software exitoso. Buscar la excelencia en este ámbito me ha llevado a crear {graphql}.",
+      "portrait": {
+        "alt": "Retrato de Mario"
+      },
+      "links": {
+        "aria": {
+          "github": "Perfil de GitHub",
+          "instagram": "Perfil de Instagram",
+          "linkedin": "Perfil de LinkedIn"
+        }
+      }
+    },
+    "projects": {
+      "gql-banner": {
+        "alt": "Banner de GraphQL Network",
+        "title": "GraphQL Network",
+        "description": "Una extensión de Chrome DevTools para inspeccionar y depurar tráfico GraphQL, justo donde ya trabajas",
+        "button": "Visitar sitio"
+      }
+    },
+    "talks": {
+      "gql-reel-1": "GraphQL Network Reel 1",
+      "gql-video-cover": "Portada del video de GraphQL Network",
+      "gql-reel-2": "GraphQL Network Reel 2",
+      "gql-slides-cover": "Portada de las diapositivas de GraphQL Network"
+    }
+  }
+}
