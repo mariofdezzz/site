@@ -1,17 +1,17 @@
 <script setup lang="ts">
-// const { locales, locale: currentLocale, setLocale } = useI18n()
-// const locale = ref(currentLocale.value)
+const { locales, locale: currentLocale, setLocale } = useI18n()
+const locale = ref(currentLocale.value)
 
-// const options = computed(() =>
-// 	locales.value.map(({ code, name }) => ({
-// 		label: name!,
-// 		value: code,
-// 	})),
-// )
+const options = computed(() =>
+	locales.value.map(({ code, name }) => ({
+		label: name!,
+		value: code,
+	})),
+)
 
-// function update(newLocale?: string) {
-// 	if (newLocale) setLocale(newLocale as any)
-// }
+function update(newLocale: string | undefined) {
+	if (newLocale) setLocale(newLocale as any)
+}
 </script>
 
 <template>
@@ -26,10 +26,16 @@
 			class="row-start-2 col-start-2 pb-6 flex items-center justify-between"
 		>
 			<IconSignature class="h-16" />
-			<!-- 
-			<SharedSelect v-model="locale" :options="options" @change="update">
-				idioma
-			</SharedSelect> -->
+
+			<SharedSelect
+				v-model="locale"
+				:options="options"
+				@change="update"
+				variant="ghost"
+				aria-label="Select language"
+			>
+				<Icon name="lucide:languages" />
+			</SharedSelect>
 		</footer>
 	</div>
 </template>

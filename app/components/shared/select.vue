@@ -1,136 +1,157 @@
 <script setup lang="ts">
-import { onBeforeUnmount, onMounted, ref, useId } from 'vue'
+import { computed, ref, useId } from 'vue'
 
-const model = defineModel<string>()
+interface SelectOption {
+	label: string
+	value: string
+	disabled?: boolean
+}
 
-defineProps<{
-	options: Array<{ label: string; value: string }>
-}>()
+const props = withDefaults(
+	defineProps<{
+		modelValue: string | null
+		options: SelectOption[]
+		placeholder?: string
+		disabled?: boolean
+		variant?: 'outline' | 'ghost'
+	}>(),
+	{
+		placeholder: 'Select an option',
+		disabled: false,
+		variant: 'outline',
+	},
+)
 
 const emit = defineEmits<{
-	change: [string | undefined]
+	'update:modelValue': [value: string]
+	change: [value: string]
 }>()
 
-const triggerId = useId().replace(/:/g, '')
-const menuId = `${triggerId}-menu`
-const triggerRef = ref<HTMLButtonElement | null>(null)
-const menuRef = ref<HTMLElement | null>(null)
+const id = useId()
+const popoverId = `select-${id.replaceAll(':', '')}`
+const anchorName = `--select-${id.replaceAll(':', '')}`
+
+const popover = ref<HTMLElement | null>(null)
 const isOpen = ref(false)
 
-const updateMenuPosition = () => {
-	if (!triggerRef.value || !menuRef.value) return
+const selectedOption = computed(() =>
+	props.options.find((option) => option.value === props.modelValue),
+)
 
-	const triggerRect = triggerRef.value.getBoundingClientRect()
-	const menu = menuRef.value
-	const menuHeight = menu.offsetHeight || 220
-	const gap = 8
-	const spaceBelow = window.innerHeight - triggerRect.bottom
-	const spaceAbove = triggerRect.top
-	const shouldOpenAbove =
-		spaceBelow < menuHeight + gap && spaceAbove > menuHeight + gap
+function selectOption(option: SelectOption) {
+	if (option.disabled) return
 
-	const top = shouldOpenAbove
-		? triggerRect.top - menuHeight - gap
-		: triggerRect.bottom + gap
-
-	const left = Math.min(
-		Math.max(gap, triggerRect.left),
-		window.innerWidth - menu.offsetWidth - gap,
-	)
-
-	menu.style.position = 'fixed'
-	menu.style.left = `${left}px`
-	menu.style.top = `${Math.max(gap, top)}px`
-	menu.style.minWidth = `${triggerRect.width}px`
-	menu.style.width = `${Math.max(triggerRect.width, menu.offsetWidth)}px`
+	emit('update:modelValue', option.value)
+	emit('change', option.value)
+	popover.value?.hidePopover()
 }
 
-const togglePopover = () => {
-	if (!menuRef.value) return
-
-	if (menuRef.value.matches(':popover-open')) {
-		menuRef.value.hidePopover()
-		isOpen.value = false
-		return
-	}
-
-	menuRef.value.showPopover()
-	updateMenuPosition()
-	isOpen.value = true
+function onToggle(event: Event) {
+	isOpen.value = (event as ToggleEvent).newState === 'open'
 }
-
-const closePopover = () => {
-	if (!menuRef.value) return
-
-	menuRef.value.hidePopover()
-	isOpen.value = false
-}
-
-const selectOption = (value: string | undefined) => {
-	model.value = value
-	emit('change', value)
-	closePopover()
-}
-
-onMounted(() => {
-	window.addEventListener('resize', updateMenuPosition)
-	window.addEventListener('scroll', updateMenuPosition, true)
-})
-
-onBeforeUnmount(() => {
-	window.removeEventListener('resize', updateMenuPosition)
-	window.removeEventListener('scroll', updateMenuPosition, true)
-})
 </script>
 
 <template>
-	<div class="relative inline-block">
+	<div class="relative">
+		<!-- Trigger -->
 		<button
 			type="button"
-			:id="triggerId"
-			ref="triggerRef"
-			class="cursor-pointer rounded-md border border-slate-300 bg-white px-3 py-2 text-left text-sm text-slate-700 outline-none transition focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2"
-			:aria-controls="menuId"
-			aria-haspopup="listbox"
+			:popovertarget="popoverId"
+			:style="{ anchorName }"
+			:disabled="disabled"
 			:aria-expanded="isOpen"
-			@click="togglePopover"
-			@keydown.escape.prevent="closePopover"
+			aria-haspopup="listbox"
+			class="flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-sm text-on-base transition-colors hover:bg-elevated focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-not-allowed disabled:opacity-50"
+			:class="{
+				'border border-on-base-border bg-base shadow-xs': variant === 'outline',
+			}"
 		>
-			<slot />
+			<span
+				class="truncate"
+				:class="{ 'text-gray-400 dark:text-gray-500': !selectedOption }"
+			>
+				<slot />
+			</span>
+
+			<Icon
+				name="lucide:chevron-down"
+				class="size-4 shrink-0 text-gray-400 transition-transform"
+				:class="{ 'rotate-180': isOpen }"
+			/>
 		</button>
 
-		<ul
-			:id="menuId"
-			ref="menuRef"
-			role="listbox"
+		<!-- Popover -->
+		<div
+			:id="popoverId"
+			ref="popover"
 			popover="auto"
-			:aria-label="'Select an option'"
-			class="z-50 rounded-md border border-slate-200 bg-white p-1 shadow-lg focus:outline-none"
-			@keydown.escape.prevent="closePopover"
+			role="listbox"
+			:style="{ positionAnchor: anchorName }"
+			class="fixed m-0 min-w-36 overflow-y-auto overscroll-contain rounded-lg border border-on-base-border bg-base p-1 shadow-lg"
+			@toggle="onToggle"
 		>
-			<li
+			<button
 				v-for="option in options"
 				:key="option.value"
+				type="button"
 				role="option"
-				:aria-selected="model === option.value"
-				:tabindex="0"
-				class="cursor-pointer rounded px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:bg-slate-100 focus:outline-none"
-				@click="selectOption(option.value)"
-				@keydown.enter.prevent="selectOption(option.value)"
-				@keydown.space.prevent="selectOption(option.value)"
+				:aria-selected="option.value === modelValue"
+				:disabled="option.disabled"
+				class="flex items-center justify-between gap-4 w-full rounded-md px-2.5 py-2 text-left text-sm text-on-base transition-colors hover:bg-elevated focus-visible:bg-elevated focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-40"
+				:class="{
+					' font-medium': option.value === modelValue,
+				}"
+				@click="selectOption(option)"
 			>
-				{{ option.label }}
-			</li>
-		</ul>
+				<span class="truncate">{{ option.label }}</span>
+
+				<Icon
+					v-if="option.value === modelValue"
+					name="lucide:check"
+					class="size-4 shrink-0 text-on-base"
+				/>
+			</button>
+		</div>
 	</div>
 </template>
 
 <style scoped>
-ul {
+.select-content {
+	position-anchor: --select-trigger;
+}
+</style>
+
+<style>
+[popover]:popover-open {
+	display: block;
+}
+
+@position-try --above {
+	top: auto;
+	bottom: anchor(top);
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+
+@position-try --align-right {
+	left: auto;
+	right: anchor(right);
+}
+
+@position-try --above-align-right {
+	top: auto;
+	bottom: anchor(top);
+	left: auto;
+	right: anchor(right);
+	margin-top: 0;
+	margin-bottom: 4px;
+}
+
+[popover] {
 	position: fixed;
-	left: 0;
-	top: 0;
-	max-height: min(16rem, 50vh);
-	overflow-y: auto;
+	top: anchor(bottom);
+	left: anchor(left);
+	margin-top: 4px;
+	position-try-fallbacks: --align-right, --above, --above-align-right;
 }
 </style>
