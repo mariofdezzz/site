@@ -7,15 +7,8 @@
 		<HomeSectionAboutLinks class="pb-6" />
 
 		<p>
-			I was raised in the
-			<a
-				href="https://en.wikipedia.org/wiki/Canary_Islands"
-				target="_blank"
-				rel="noopener noreferrer"
-			>
-				Canary Islands
-			</a>
-			and now work remotely worldwide.
+			I'm a software engineer raised in Gran Canaria, Spain. I've focused my
+			career on web technologies and desktop/mobile applications.
 		</p>
 
 		<p>
@@ -27,7 +20,7 @@
 			>
 				Airbus
 			</a>
-			as a Technical Lead. I lead some teams while I ensure technical excellence
+			as a Technical Lead. I lead teams while I ensure technical excellence
 			across the Spanish division (+50 engineers).
 		</p>
 
